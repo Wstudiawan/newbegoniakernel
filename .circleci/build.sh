@@ -49,6 +49,7 @@ function finerr() {
 }
 # Compile plox
 function compile() {
+    make clean mrproper O=out
     make O=out ARCH=arm64 begonia_user_defconfig
     make -j$(nproc --all) O=out \
                     ARCH=arm64 \
